@@ -1,0 +1,81 @@
+.filters {
+    padding: 20px;
+    background-color: #ffff;
+    border: 1px solid #EAEBED;
+    width: 324px;
+    border-radius: 12px;
+    margin-right: 28px;
+    box-shadow: 3px 3px 5px #EAEBED;
+}
+
+.filters .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filters-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.filters-header .left:hover {
+    opacity: 80%;
+    cursor: default;
+}
+
+.filters-header .left {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+
+}
+
+.filters-header h2 {
+    color: #ACADB9;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.filters-btn {
+    background-color: #5E96FC;
+    border: 2px solid #5E96FC;
+    border-radius: 8px;
+    padding: 10px 99px;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.filters-btn:hover {
+    background-color: white;
+    border: 2px solid #5E96FC;
+    color: black;
+    border-radius: 8px;
+}
+
+.from {
+    margin: 8px 0px;
+}
+
+.from label, .sector label {
+    font-family: 'Inter' sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.sector {
+    margin-bottom: 20px;
+}
+
+.numb-input{
+    width: 284px;
+}

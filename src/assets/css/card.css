@@ -1,0 +1,26 @@
+.card{
+    border: 1px solid #EAEBED;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px #EAEBED;
+    background: white;
+    padding: 24px;
+    margin: 20px 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 16px;
+}
+
+.card h1{
+    font-weight: 600;
+    font-size: 20px;
+    color: #5E96FC;
+}
+.salary{
+    margin: 13px 0;
+}
+.dot{
+    padding: 12px;
+}
+.loc{
+   margin-right: 13px;
+}

@@ -1,0 +1,44 @@
+.search-vacancy{
+    width: 100%;
+}
+
+.input-folder{
+    background: white;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 0.875em;
+    border: 1px solid #EAEBED;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px #EAEBED;
+}
+
+.input-folder input{
+    width: 100%;
+    margin-left: 8px;
+}
+
+.input-folder button{
+    padding: 3px 19px;
+    border: 2px solid #5E96FC;
+    background: #5E96FC;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.input-folder button:hover{
+    background: #FFFFFF;
+    border: 2px solid #5E96FC;
+    color: black
+}
+.pag-wrap{
+    display: flex;
+    justify-content: center;
+}
+.loader{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
