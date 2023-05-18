@@ -16,5 +16,4 @@ export const inpNameJobSlice = createSlice({
 })
 
 export const {setNameJob} = inpNameJobSlice.actions
-
 export const selectNameJob = state => state.inpNameJob.nameJob

@@ -4,23 +4,41 @@
     box-shadow: 3px 3px 5px #EAEBED;
     background: white;
     padding: 24px;
-    margin: 20px 0;
-    font-family: 'Inter';
-    font-style: normal;
+    margin: 16px 0 0 0;
+    font-family: 'Inter', serif;
     font-size: 16px;
+    position: relative;
+    width: 100%;
 }
-
 .card h1{
     font-weight: 600;
     font-size: 20px;
     color: #5E96FC;
 }
+
+.profession{
+    margin-right: 50px;
+}
+.profession:hover{
+   opacity: 50%;
+}
 .salary{
     margin: 13px 0;
 }
+.salary span{
+    font-weight: 600;
+}
 .dot{
     padding: 12px;
+    font-weight: 700;
+
 }
 .loc{
    margin-right: 13px;
+}
+
+.favourites-star{
+    position: absolute;
+    padding: 3px;
+    right: 22px
 }

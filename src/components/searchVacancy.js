@@ -1,50 +1,55 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "../assets/css/searchVacancy.css"
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../asyncActions/data";
 import Card from "./card";
 import {Pagination} from '@mantine/core';
-import {selectOutData} from "../state/outSlice";
+import {selectOutData, selectPage, selectTotal, setPage} from "../state/outSlice";
 import {Loader} from "@mantine/core";
+import {selectNameJob, setNameJob} from "../state/inpNameJobSlice";
+import {ActionIcon} from "@mantine/core";
+import {IconSearch} from '@tabler/icons-react';
 
-function SearchVacancy(props) {
+
+function SearchVacancy() {
     const dispatch = useDispatch()
+    const search = useSelector(selectNameJob)
+    const total = useSelector(selectTotal)
+    const searchJob = e => dispatch(setNameJob(e))
+    const setActivePage = e =>dispatch(setPage(e))
+    const getStartJob = e => dispatch(fetchData(e))
     const data = useSelector(selectOutData)
-    const [activePage, setPage] = useState(1);
-    const numbers = [0, 1, 2, 3];
+    const activePage  = useSelector(selectPage)
+
     return (
         <div className="search-vacancy">
-            <div className="">
-                <div className="">
-                    <button onClick={() => dispatch(fetchData())}>Search</button>
-                </div>
-            </div>
             <div className="input-folder">
-                <FontAwesomeIcon icon={faMagnifyingGlass} color="#ACADB9"/>
+                <ActionIcon variant="transparent"><IconSearch size="1rem"/></ActionIcon>
                 <input type="text"
                        placeholder="Введите название вакансии"
-                       value={props.search}
-                       onChange={e => props.searchJob(e.target.value)}
+                       value={search.toString()}
+                       onChange={e => searchJob(e.target.value)}
                 />
-                <button>Поиск</button>
+                <button className="inp-search-btn" onClick={() => dispatch(fetchData())}>Поиск</button>
             </div>
-            {!!data ?
-                numbers.map(i =>
-                    <Card numb={i + activePage - 1} key={i + activePage - 1}/>
-                ) : (
+            {(!!data) ?
+                <>
+                    {
+                        data.map((v, i) => <Card className="card" val={v} key={i}/>)
+                    }
+                    <div className="pag-wrap">
+                        <Pagination value={Number(activePage)}
+                                    onChange={e=>{setActivePage(e); getStartJob()}}
+                                    total={Math.min(Math.ceil(total / 4), 250)}
+                        />
+                    </div>
+                </>
+
+                : (
                     <div className="loader">
-                        <Loader size={100}/>
+                        <Loader size={30}/>
                     </div>)
             }
-            <div className="pag-wrap">
-                <Pagination
-                            value={activePage}
-                            onChange={setPage}
-
-                />
-            </div>
         </div>
 
     );

@@ -3,45 +3,64 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     upper: 0,
     lower: 0,
-    sector: [],
+    catalogues: '',
+    listCatalogues: ['']
 }
 
 export const filtersSlice = createSlice({
     name: 'filters',
     initialState: initialState,
     reducers: {
-        setSector: (s, a) => {
-            console.log(s.sector)
-            s.sector.push(a.payload)
-            console.log(s.sector)
+        setCatalogues: (s, a) => {
+            s.catalogues = a.payload;
+            console.log(s.catalogues)
         },
         reset: s => {
-           return s = initialState
+           return s = {
+               upper: 0,
+               lower: 0,
+               catalogues: '',
+               listCatalogues: s.listCatalogues
+           }
         },
         setLower: (s, a) => {
-            console.log(s.lower)
             if (a.payload <= s.upper){
                 s.lower = a.payload
-            }else {
-                s.lower = s.upper
-                s.upper = a.payload
             }
+            else{
+                s.lower = a.payload
+                s.upper =a.payload
+            }
+            console.log(s.lower)
         },
         setUpper: (s, a) => {
             if (a.payload >= s.lower){
                 s.upper = a.payload
-            } else {
-                s.upper = s.lower
-                s.lower = a.payload
             }
+            else{
+                s.lower = a.payload
+                s.upper =a.payload
+            }
+            console.log(s.upper)
+        },
+        updateCatalogues: (s, a ) => {
+            console.log(s.listCatalogues)
+            s.listCatalogues = a.payload.map(e =>{
+                return {
+                    label: e.title_trimmed,
+                    value: e.key,
+                }
+            })
+            console.log(s.listCatalogues)
         },
     }
 })
 
-export const { setSector, setUpper, setLower, reset } = filtersSlice.actions
+export const { setCatalogues, setUpper, setLower, reset, updateCatalogues } = filtersSlice.actions
 
 export const selectUpper = state => state.filters.upper
 export const selectLower = state => state.filters.lower
-export const selectSector = state => state.filters.sector
+export const selectCataloguesToSearch = state => state.filters.catalogues
+export const selectListCatalogues = state => state.filters.listCatalogues
 
 

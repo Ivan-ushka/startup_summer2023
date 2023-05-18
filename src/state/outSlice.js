@@ -4,22 +4,23 @@ export const outSlice = createSlice({
     name: 'output',
     initialState: {
         dataOut: '',
-        listCatalogues: ['g'],
+        page: 1,
+        total: 0,
     },
     reducers: {
         updateData: (s, a) => {
             s.dataOut = a.payload.objects;
+            s.total = a.payload.total
             console.log(s.dataOut)
-
         },
-        updateCatalogues: (s, a )=>{
-            s.listCatalogues = a.payload.title;
-            console.log(s.listCatalogues)
+        setPage: (s,a) => {
+            s.page = a.payload
         }
     }
 })
 
-export const {updateData, updateCatalogues} = outSlice.actions
+export const {updateData, setPage} = outSlice.actions
 
 export const selectOutData = state => state.out.dataOut
-export const selectListCatalogues = state => state.out.listCatalogues
+export const selectTotal = state => state.out.total
+export const selectPage = state => state.out.page

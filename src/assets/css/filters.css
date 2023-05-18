@@ -5,7 +5,7 @@
     width: 324px;
     border-radius: 12px;
     margin-right: 28px;
-    box-shadow: 3px 3px 5px #EAEBED;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .filters .container {
@@ -65,8 +65,8 @@
     margin: 8px 0px;
 }
 
-.from label, .sector label {
-    font-family: 'Inter' sans-serif;
+.filters label {
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -78,4 +78,11 @@
 
 .numb-input{
     width: 284px;
+}
+
+@media (max-width: 1150px){
+    .filters{
+        margin: 0px 0 40px;
+    }
+
 }
