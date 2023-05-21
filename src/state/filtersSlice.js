@@ -39,7 +39,7 @@ export const filtersSlice = createSlice({
             }
             else{
                 s.lower = a.payload
-                s.upper =a.payload
+                s.upper = a.payload
             }
             console.log(s.upper)
         },

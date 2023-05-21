@@ -6,7 +6,6 @@ import SearchVacancy from "../../components/searchVacancy";
 import { useDispatch } from 'react-redux'
 import {fetchCatalogues, fetchData} from "../../asyncActions/data";
 
-
 function SearchJob(props) {
     const dispatch = useDispatch()
     const getStartJob = e => dispatch(fetchData(e))

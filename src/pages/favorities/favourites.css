@@ -10,3 +10,10 @@
 .pag-wrap{
     margin-top: 104px;
 }
+
+@media (max-width: 700px){
+    .favourites-main{
+        padding:20px 13vw 24px  13vw ;
+    }
+
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom';
-import Card from "../../components/card";
+import VacancyCard from "../../components/vacancyCard";
 import TopBar from "../../layouts/topBar";
 import "./vacancy.css"
 
@@ -10,7 +10,7 @@ function Vacancy(props) {
         <div className="vacancy" onClick={() => console.log(location.state)}>
             <TopBar/>
             <main className="main">
-                 <Card className="card" val={location.state} key={location.state.id}/>
+                 <VacancyCard className="card" val={location.state} key={location.state.id}/>
                  <div className="description-wrap">
                      <div dangerouslySetInnerHTML={{__html: location.state.vacancyRichText}} className="description"/>
                  </div>

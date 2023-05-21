@@ -1,6 +1,7 @@
 .vacancy .main{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
     padding:40px 23vw 51px  23vw ;
     font-family: 'Inter';
@@ -10,6 +11,7 @@
 }
 
 .vacancy .description{
+    margin-top: 20px;
     padding: 24px;
     background: #FFFFFF;
     border: 1px solid #EAEBED;
@@ -20,16 +22,14 @@
 .description b{
    font-size: 20px;
 }
-.description p{
-    margin: 20px 0 16px;
-}
+
 .description ul{
     margin-left: 24px
 }
-
 
 @media (max-width: 700px){
     .vacancy .main{
         padding: 3em;
     }
+
 }

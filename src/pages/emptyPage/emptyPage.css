@@ -1,0 +1,21 @@
+.empty-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 120px 0 340px 0 ;
+}
+.empty-main p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 32px 0;
+}
+.empty-main .link{
+    font-weight: 600;
+    padding: 10px 24px;
+    background: #DEECFF;
+    border-radius: 8px;
+    color: #3B7CD3;
+}

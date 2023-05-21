@@ -1,4 +1,4 @@
-.card{
+.card {
     border: 1px solid #EAEBED;
     border-radius: 8px;
     box-shadow: 3px 3px 5px #EAEBED;
@@ -10,35 +10,42 @@
     position: relative;
     width: 100%;
 }
-.card h1{
+
+.profession {
     font-weight: 600;
     font-size: 20px;
     color: #5E96FC;
-}
-
-.profession{
     margin-right: 50px;
 }
-.profession:hover{
-   opacity: 50%;
-}
-.salary{
+
+
+.salary {
     margin: 13px 0;
 }
-.salary span{
+
+.salary span {
     font-weight: 600;
 }
-.dot{
+
+.dot {
     padding: 12px;
     font-weight: 700;
-
-}
-.loc{
-   margin-right: 13px;
+    color:gray;
 }
 
-.favourites-star{
+.loc {
+    margin-right: 13px;
+}
+
+.favourites-star {
     position: absolute;
     padding: 3px;
     right: 22px
+}
+
+@media (max-width: 400px) {
+    .favourites-star {
+        position: inherit;
+        margin-left: 16px
+    }
 }

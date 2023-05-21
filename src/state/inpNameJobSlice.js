@@ -9,9 +9,8 @@ export const inpNameJobSlice = createSlice({
     reducers: {
         setNameJob: (s,a) => {
             s.nameJob = a.payload
-            console.log(s.nameJob)
+            console.log(s.nameJob, 'namejob')
         }
-
     }
 })
 
