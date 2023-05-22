@@ -21,7 +21,6 @@ function VacancyCard({val}) {
         const index = items.findIndex(e => e.id === val.id);
         if (index !== -1) items.splice(index, 1);
         localStorage.setItem('favourites', JSON.stringify(items));
-        console.log(1)
     }
 
     const addItemToLocalStorage = (items) => {
@@ -30,10 +29,12 @@ function VacancyCard({val}) {
     }
 
     const handleFavourites = (e) => {
+
         const items = JSON.parse(localStorage.getItem('favourites'));
         if (items.some(item => item.id === val.id)) deleteItemFromLocalstorage(items)
         else addItemToLocalStorage(items)
-        // isFavouriteOnClick(e)
+        isFavouriteOnClick(e)
+
     }
 
     const isFavourite = (e) => {
@@ -42,11 +43,11 @@ function VacancyCard({val}) {
         else return starImg
     }
 
-    // const isFavouriteOnClick = (e) => {
-    //     const items = JSON.parse(localStorage.getItem('favourites'));
-    //     if (items.some(item => item.id === val.id)) e.target.src = starImgOnClick
-    //     else e.target.src  = starImg
-    // }
+    const isFavouriteOnClick = (e) => {
+        const items = JSON.parse(localStorage.getItem('favourites'));
+        if (items.some(item => item.id === val.id)) e.target.src = starImgOnClick
+        else e.target.src = starImg
+    }
 
     return (
         <div className="card">

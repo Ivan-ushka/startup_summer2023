@@ -8,6 +8,7 @@
     background-color: white;
     position: relative;
 }
+
 .logo{
     position: absolute;
     display: flex;
@@ -15,6 +16,7 @@
     justify-content: center;
 
 }
+
 .logo a{
     display: flex;
     align-items: center;
@@ -25,6 +27,7 @@
     font-weight: 600;
     color: black;
 }
+
 .logo-text{
     margin-left: 10px;
 }
@@ -39,9 +42,11 @@
 .navigation a{
     color: black;
 }
+
 .navigation a:hover{
     color: #5E96FC;
 }
+
 .search-page__link{
     margin-right: 60px;
 }
@@ -56,10 +61,4 @@
     .logo{
         position: inherit;
     }
-
-}
-
-@media (max-width: 400px){
-
-
 }

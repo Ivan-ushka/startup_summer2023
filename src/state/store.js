@@ -1,12 +1,12 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {filtersSlice} from "./filtersSlice"
-import {inpNameJobSlice} from "./inpNameJobSlice";
+import {nameVacancySlice} from "./nameVacancySlice";
 import {listVacanciesSlice} from "./listVacanciesSlice";
 import thunk from "redux-thunk";
 
 const reducer = combineReducers({
     filters: filtersSlice.reducer,
-    inpNameJob: inpNameJobSlice.reducer,
+    nameVac: nameVacancySlice.reducer,
     out: listVacanciesSlice.reducer,
 })
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import TopBar from "../../layouts/topBar";
 import "./emptyPage.css"
 import searchingPersonImg from "../../assets/images/searchingPerson.svg"
@@ -8,10 +8,10 @@ function EmptyPage(props) {
     return (
         <div>
             <TopBar />
-            <main className="empty-main">
+            <main className="empty-main" >
                 <img src={searchingPersonImg} alt="searchingPersonImg"/>
                 <p>Упс, здесь еще ничего нет!</p>
-                <Link className="link" to="/">Поиск Вакансий</Link>
+                <Link className="link" to="/" >Поиск Вакансий</Link>
             </main>
         </div>
     );

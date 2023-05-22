@@ -15,12 +15,10 @@ function NumberInputStyled(props) {
                 styles={{
                     controlUp: {
                         border: 0,
-
                         color: "#ACADB9"
                     },
                     controlDown: {
                         border: 0,
-                        size: "20px",
                         color: "#ACADB9"
                     },
                     rightSection: {width: "auto"}

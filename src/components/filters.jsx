@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {IconChevronDown} from '@tabler/icons-react';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchData} from "../asyncActions/data";
+import {fetchData} from "../asyncActions/fetchVacanciesList";
 import {
     selectLower,
     selectUpper,
@@ -17,7 +17,7 @@ import NumberInputStyled from "./numberInputStyled";
 
 function Filters(props) {
     const dispatch = useDispatch()
-    const getJob = e => dispatch(fetchData(e))
+    const setVacancies = e => dispatch(fetchData(e))
     const lower = useSelector(selectLower)
     const upper = useSelector(selectUpper)
 
@@ -36,7 +36,7 @@ function Filters(props) {
                     <p>Фильтры</p>
                     <div className="left" onClick={e => {
                         resetOnClick(e);
-                        getJob()
+                        setVacancies()
                     }}>
                         <h2>Сбросить всё</h2>
                         <FontAwesomeIcon icon={faXmark} color="#ACADB9"/>
@@ -62,7 +62,7 @@ function Filters(props) {
                         </div>
                         <NumberInputStyled value={upper} onChange={upperOnClick}/>
                     </div>
-                    <button className="filters-btn" onClick={(e) => getJob(e)}>Применить</button>
+                    <button className="filters-btn" onClick={(e) => setVacancies(e)}>Применить</button>
 
                 </div>
             </div>

@@ -9,12 +9,6 @@ import {useNavigate} from "react-router-dom";
 function Favourites(props) {
     const [activePage, setActivePage] = useState(1)
 
-    let navigate = useNavigate();
-    const routeChange = () => {
-        let path = `/emptypage`;
-        navigate(path);
-    }
-
     const [favourites, setFavourites] = useState(() => {
         const localData = localStorage.getItem('favourites');
         return localData !== null ? JSON.parse(localData) : false;
@@ -25,12 +19,18 @@ function Favourites(props) {
         const newData = localData !== null ? JSON.parse(localData) : false;
 
         if (newData.toString() !== favourites.toString()) setFavourites(newData);
-
     }
 
     useEffect(() => {
         if ((activePage - 1) * 4 === favourites.length) setActivePage(activePage - 1)
     }, [activePage, favourites])
+
+    let navigate = useNavigate();
+
+    const routeChange = () => {
+        let path = `/emptypage`;
+        navigate(path);
+    }
 
     useEffect(()=>{
         if(!favourites.length) routeChange();
@@ -41,9 +41,9 @@ function Favourites(props) {
             <TopBar/>
             <main className="favourites-main" onClick={() => {handleData(); console.log(activePage)}}>
                 {
-                    favourites.map((v, i) => {
+                 !!favourites && favourites.map((v, i) => {
                         return (i < activePage * 4 && i >= (activePage - 1) * 4) &&
-                            <VacancyCard className="card" val={v} key={i}/>
+                            <VacancyCard className="card" val={v} key={v.id}/>
                     })
                 }
                 <div className="pag-wrap">
@@ -55,7 +55,6 @@ function Favourites(props) {
             </main>
         </div>
     );
-
 }
 
 export default Favourites;
