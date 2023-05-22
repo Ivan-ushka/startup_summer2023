@@ -34,12 +34,13 @@ function Favourites(props) {
 
     useEffect(()=>{
         if(!favourites.length) routeChange();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[favourites])
 
     return (
         <div className="favourites" >
             <TopBar/>
-            <main className="favourites-main" onClick={() => {handleData(); console.log(activePage)}}>
+            <main className="favourites-main" onClick={() => handleData() }>
                 {
                  !!favourites && favourites.map((v, i) => {
                         return (i < activePage * 4 && i >= (activePage - 1) * 4) &&

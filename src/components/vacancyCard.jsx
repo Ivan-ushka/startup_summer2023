@@ -50,9 +50,9 @@ function VacancyCard({val}) {
     }
 
     return (
-        <div className="card">
+        <div className="card" data-elem={"vacancy-" + val.id}>
             <div className="favourites-star">
-                <img src={isFavourite()} alt="star" onClick={(e) => handleFavourites(e)}/>
+                <img data-elem={"vacancy-"+ val.id + "-shortlist-button"} src={isFavourite()} alt="star" onClick={(e) => handleFavourites(e)}/>
             </div>
             <Link to="/vacancy/val.id" state={val} className="profession">{profession}</Link>
             <p className="salary">

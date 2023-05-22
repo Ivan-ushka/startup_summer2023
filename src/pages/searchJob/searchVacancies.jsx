@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Filters from "../../components/filters";
 import TopBar from "../../layouts/topBar";
 import "./searchVacancies.css"
@@ -22,6 +22,7 @@ function SearchVacancies(props) {
         };
         localStorage.setItem('favourites', '[]')
         fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 

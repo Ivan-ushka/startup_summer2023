@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "../assets/css/searchVacancy.css"
 import VacancyCard from "./vacancyCard";
 
@@ -11,7 +11,6 @@ import {Pagination} from '@mantine/core';
 import {Loader} from "@mantine/core";
 import {ActionIcon} from "@mantine/core";
 import {IconSearch} from '@tabler/icons-react';
-import {Link, useNavigate} from "react-router-dom";
 
 import {selectNameVacancy, setNameVacancy} from "../state/nameVacancySlice";
 import searchingPersonImg from "../assets/images/searchingPerson.svg";
@@ -30,22 +29,17 @@ function SearchVacancy() {
 
     const activePage = useSelector(selectPage)
 
-    let navigate = useNavigate();
-    const routeChange = () => {
-        let path = `/emptypage`;
-        navigate(path);
-    }
-
     return (
         <div className="search-vacancy">
             <div className="input-folder">
                 <ActionIcon variant="transparent"><IconSearch size="1rem"/></ActionIcon>
-                <input type="text"
+                <input data-elem="search-input"
+                       type="text"
                        placeholder="Введите название вакансии"
                        value={search.toString()}
                        onChange={e => setNameVac(e.target.value)}
                 />
-                <button className="inp-search-btn" onClick={() => dispatch(fetchData())}>Поиск</button>
+                <button data-elem="search-button" className="inp-search-btn" onClick={() => dispatch(fetchData())}>Поиск</button>
             </div>
             {(!!data) ?
                 <>

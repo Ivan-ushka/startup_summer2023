@@ -43,7 +43,8 @@ function Filters(props) {
                     </div>
                 </div>
                 <div className="filters-main">
-                    <Select className="catalogues"
+                    <Select data-elem="industry-select"
+                            className="catalogues"
                             label="Отрасль"
                             size="md"
                             placeholder="Выберите отрасль"
@@ -58,11 +59,11 @@ function Filters(props) {
                     <div className="salary-inp">
                         <label htmlFor="numb-inp">Оклад</label>
                         <div className="numb-inp-1">
-                            <NumberInputStyled value={lower} onChange={lowerOnClick}/>
+                            <NumberInputStyled value={lower} onChange={lowerOnClick} elemType="salary-from-input"/>
                         </div>
-                        <NumberInputStyled value={upper} onChange={upperOnClick}/>
+                        <NumberInputStyled value={upper} onChange={upperOnClick}elemType="salary-to-input"/>
                     </div>
-                    <button className="filters-btn" onClick={(e) => setVacancies(e)}>Применить</button>
+                    <button data-elem="search-button" className="filters-btn" onClick={(e) => setVacancies(e)}>Применить</button>
 
                 </div>
             </div>

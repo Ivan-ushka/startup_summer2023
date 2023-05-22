@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import TopBar from "../../layouts/topBar";
 import "./emptyPage.css"
 import searchingPersonImg from "../../assets/images/searchingPerson.svg"

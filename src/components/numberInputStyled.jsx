@@ -5,6 +5,7 @@ function NumberInputStyled(props) {
     return (
         <div>
             <NumberInput
+                data-elem={props.elemType}
                 size="md"
                 value={props.value}
                 onChange={props.onChange}
